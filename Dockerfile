@@ -153,5 +153,6 @@ ENV HOME=/tmp
 ENV XDG_CACHE_HOME=/tmp/.cache
 ENV XDG_CONFIG_HOME=/tmp/.config
 
-# Set entrypoint
-ENTRYPOINT ["node", "dist/shannon.js"]
+# Default: run the Temporal worker
+# Override with Railway start command or docker-compose entrypoint as needed
+CMD ["node", "dist/temporal/worker.js"]
